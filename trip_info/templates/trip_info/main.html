@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        th, td {
+          padding: 8px;
+          text-align: left;
+          border: 2px solid #DDD;
+        }
+
+        tr:hover {background-color: #D6EEEE;}
+
+    </style>
+</head>
+<body>
+<div class="main">
+    <table id="departure" class="display" style="width:50%">
+        <thead>
+        <tr>
+            <th>Flight</th>
+            <th>Plane</th>
+            <th>From</th>
+            <th>Schedule Departure</th>
+            <th>To</th>
+            <th>Schedule Arrivals</th>
+            <th>Status</th>
+            <th>Count: {{ count }}</th>
+        </tr>
+        </thead>
+        {% for p in posts %}
+        <tr>
+            <th> {{ p.flight }}</th>
+            <th> {{ p.plane }}</th>
+            <th> {{ p.city_departure }}</th>
+            <th> {{ p.schedule_dep }}</th>
+            <th> {{ p.city_arrive }}</th>
+            <th> {{ p.schedule_arr }}</th>
+            <th> {{ p.status }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
